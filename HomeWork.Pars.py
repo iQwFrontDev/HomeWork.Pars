@@ -11,7 +11,7 @@ def getPost(query,pages):
 
     for s in query:
         for p in range(1,pages+1):
-            URL = f'https://habr.com/ru/search/page2'
+            URL = f'https://habr.com/ru/search/page{p}'
             params = {
                 'q': s,
                 'page': p
@@ -40,7 +40,7 @@ def getPost(query,pages):
 
 
                 elif title_text == "Мегапост":
-                    text = search_text.text if search_text else "Мегапост"
+                    text = "Мегапост"
 
                 else:
                     text= search_text.text
